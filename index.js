@@ -29,9 +29,9 @@ export default class EFFDicewarePassphrase {
   // In the browser, no argument necessary, it will automatically detect
   // and use Web Crypto API.
   constructor (crypto) {
-    if (window) {
+    if (typeof window === 'object') {
       // Browser
-      this.getRandomValues = window.crypto.getRandomValues
+      this.getRandomValues = window.crypto.getRandomValues.bind(window.crypto)
     } else {
       // Node.js. Expect crypto to be in an instance of the
       // default Node.js crypto module.
@@ -44,9 +44,9 @@ export default class EFFDicewarePassphrase {
     assert(count > 0, 'count must be positive integer')
     assert(count < NUMBER_OF_TOKENS, 'count must be less than the number of tokens')
 
-    const idx = sample(count, NUMBER_OF_TOKENS)
+    const idx = this.sample(count, NUMBER_OF_TOKENS)
 
-    return shuffle(idx.map(function (i) {
+    return this.shuffle(idx.map(function (i) {
       return wordlist[i]
     }))
   }
@@ -61,7 +61,6 @@ export default class EFFDicewarePassphrase {
   //
   // Private
   //
-
 
   shuffle (arr) {
     const N = arr.length
@@ -102,18 +101,19 @@ export default class EFFDicewarePassphrase {
 
 
   uniform (limit) {
-    assert.ok(Number.isInteger(limit), 'limit must be integer')
-    assert.ok(limit > 0, 'limit must be larger than 0')
-    assert.ok(limit <= MAX, 'limit must be at most 2^53 - 1')
+    assert(Number.isInteger(limit), 'limit must be integer')
+    assert(limit > 0, 'limit must be larger than 0')
+    assert(limit <= MAX, 'limit must be at most 2^53 - 1')
 
     // Edge cases:
     // 1: MAX is divisible by limit
     // 2: limit > MAX / 2
     const min = MAX - (MAX % limit)
 
+    const buf = this.buf
     let n = 0
     do {
-      this.getRandomValues(this.buf)
+      this.getRandomValues(buf)
       // Returns number in [0, 2^53)
       n = ((((buf[6] & 0b00011111) << 16) | (buf[5] << 8) | (buf[4])) >>> 0) * 0x100000000 + // 21 bits, shifted left 32 bits
         (((buf[3] << 24) | (buf[2] << 16) | (buf[1] << 8) | (buf[0])) >>> 0) // 32 bits
