@@ -1,0 +1,12 @@
+{
+  "name": "@small-tech/eff-diceware-passphrase",
+  "version": "1.0.0",
+  "description": "A low-dependency ESM version of Emil Bayes’s module of the same name. ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aral Balkan <mail@ar.al>",
+  "license": "ISC"
+}
