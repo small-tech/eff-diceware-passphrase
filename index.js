@@ -17,8 +17,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-// This is a very lightweight single-file ESM fork of Emil’s work by Aral Balkan
-// that removes the sodium-native requirement.
 import wordlist from './wordlist.js'
 
 const NUMBER_OF_TOKENS = wordlist.length
