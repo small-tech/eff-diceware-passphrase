@@ -5,8 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx esbuild index.js --bundle --platform=neutral --format=esm --outfile=dist/eff-diceware-passphrase.js",
+    "build-minified": "npx esbuild index.js --bundle --minify --platform=neutral --format=esm --outfile=dist/eff-diceware-passphrase.min.js"
   },
   "author": "Aral Balkan <mail@ar.al>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.8.52"
+  }
 }
