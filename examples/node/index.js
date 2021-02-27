@@ -1,6 +1,6 @@
 // Node.js example
 import crypto from 'crypto'
-import EFFDicewarePassphrase from './index.js'
+import EFFDicewarePassphrase from '../../index.js'
 
 const generate = new EFFDicewarePassphrase(crypto)
 const passphrase1 = generate.words(8)
