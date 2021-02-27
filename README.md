@@ -20,6 +20,8 @@ console.log('8 words:', passphrase1.join(' '))
 console.log('100 bits of entropy:', passphrase2.join(' '))
 ```
 
+(You can find this example in and run it from the _examples/node.js_ folder.)
+
 ### Browser
 
 ```html
@@ -37,7 +39,7 @@ console.log('100 bits of entropy:', passphrase2.join(' '))
     <li><strong>100 bits of entropy:</strong> <span id='passphrase2'></span></li>
   </ul>
   <script type="module">
-    import EFFDicewarePassphrase from './index.js'
+    import EFFDicewarePassphrase from './eff-diceware-passphrase.min.js'
 
     const generate = new EFFDicewarePassphrase()
     const passphrase1 = generate.words(8)
@@ -49,3 +51,23 @@ console.log('100 bits of entropy:', passphrase2.join(' '))
 </body>
 </html>
 ```
+
+You can find this example (along with a copy of the minified module bundle) in the _examples/browser_ folder.
+
+## Bundling
+
+After you’ve installed the dev dependencies using `npm i`, you can build a single-file ESM bundle by running:
+
+```sh
+npm run build
+```
+
+Or, for the minified version:
+
+```sh
+npm run build-minified
+```
+
+Find the bundles in the _dist_ folder.
+
+The non-minified version is 88kb in size and the minified one is 79kb. The bulk of the size comes from the EFF word list itself, which is 77kb.
