@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Fork of EFF Diceware Passphrase module by Emil Bay.
+// EFF Diceware Passphrase module forked from Emil Bay’s
+// excellent module of the same name.
 //
 // Differences:
 //
