@@ -1,6 +1,6 @@
 {
   "name": "@small-tech/eff-diceware-passphrase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Single-file, no-dependency, bring-your-own-crypto ESM version of Emil Bayes’s module of the same name.",
   "main": "index.js",
   "type": "module",
@@ -13,6 +13,16 @@
     "Aral Balkan <mail@ar.al>"
   ],
   "license": "ISC",
+  "files": [
+    "wordlist.js",
+    "dist"
+  ],
+  "homepage": "https://github.com/small-tech/eff-diceware-passphrase",
+  "bugs": "https://github.com/small-tech/eff-diceware-passphrase/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/small-tech/eff-diceware-passphrase.git"
+  },
   "devDependencies": {
     "esbuild": "^0.8.52"
   }
