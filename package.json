@@ -17,6 +17,7 @@
     "wordlist.js",
     "dist"
   ],
+  "keywords": ["diceware", "passphrase", "eff", "word list", "password", "crypto", "esm", "zero dependency"],
   "homepage": "https://github.com/small-tech/eff-diceware-passphrase",
   "bugs": "https://github.com/small-tech/eff-diceware-passphrase/issues",
   "repository": {
