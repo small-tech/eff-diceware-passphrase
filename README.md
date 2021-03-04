@@ -1,6 +1,6 @@
 # EFF Diceware Passphrase
 
-Forked from Emil Bay’s excellent module of the same name.
+__Forked from Emil Bay’s excellent module of the same name.__
 
 This is a single-file ESM version of Emil’s excellent module that also removes the sodium-native dependency. Instead, it employs a bring-your-own-crypto approach where you pass a reference to Node’s default crypto module when using the module under Node and it automatically detects and uses the Web Crypto API when running in the browser.
 
@@ -77,3 +77,19 @@ npm run build-minified
 Find the bundles in the _dist_ folder.
 
 The non-minified version is 88kb in size and the minified one is 79kb. The bulk of the size comes from the EFF word list itself, which is 77kb.
+
+## Like this? Fund us!
+
+[Small Technology Foundation](https://small-tech.org) is a tiny, independent not-for-profit.
+
+We exist in part thanks to patronage by people like you. If you share [our vision](https://small-tech.org/about/#small-technology) and want to support our work, please [become a patron or donate to us](https://small-tech.org/fund-us) today and help us continue to exist.
+
+## Copyright
+
+ -  ⓒ 2021 [Aral Balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
+ - ⓒ 2016-2021, [Emil Bay](https://github.com/emilbayes)
+ - See [LICENSE](./LICENSE) for complete list of notices.
+
+## License
+
+ISC
